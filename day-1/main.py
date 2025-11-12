@@ -23,10 +23,22 @@ async def main():
     # print("\n🧩 Final Summary:\n", response)
 
     # Run the agent with a sample blog topic
+    # response = await runner.run_debug(
+    #     "Write a blog post about the benefits of multi-agent systems for software developers"
+    # )
+    # print("\n🧩 Final Blog Post:\n", response)
+
+    # Run the parallel multi-topic research agent
+    # response = await runner.run_debug(
+    #     "Run the daily executive briefing on Tech, Health, and Finance"
+    # )
+    # print("\n🧩 Parallel summary agent:\n", response)
+
+    # Run the lighthouse keeper story agent
     response = await runner.run_debug(
-        "Write a blog post about the benefits of multi-agent systems for software developers"
+        "Write a short story about a lighthouse keeper who discovers a mysterious, glowing map"
     )
-    print("\n🧩 Final Blog Post:\n", response)
+    print("\n🧩 refinement loop agent :\n", response)
 
 
 if __name__ == "__main__":

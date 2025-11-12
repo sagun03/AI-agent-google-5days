@@ -18,7 +18,7 @@ def create_agents():
     # Outline Agent: Creates the initial blog post outline.
     outline_agent = Agent(
         name="OutlineAgent",
-        model=Gemini(model="gemini-2.5-flash", retry_options=retry_config),
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
         instruction="""Create a blog outline for the given topic with:
     1. A catchy headline
     2. An introduction hook
@@ -32,7 +32,7 @@ def create_agents():
     # Writer Agent: Writes the full blog post based on the outline from the previous agent.
     writer_agent = Agent(
         name="WriterAgent",
-        model=Gemini(model="gemini-2.5-flash", retry_options=retry_config),
+        model=Gemini(model="gemini-2.5-flash-lite", retry_options=retry_config),
         # The `{blog_outline}` placeholder automatically injects the state value from the previous agent's output.
         instruction="""Following this outline strictly: {blog_outline}
     Write a brief, 200 to 300-word blog post with an engaging and informative tone.""",
